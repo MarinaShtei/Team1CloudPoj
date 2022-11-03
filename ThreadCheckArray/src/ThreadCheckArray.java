@@ -1,9 +1,10 @@
+import java.util.ArrayList;
 public class ThreadCheckArray implements Runnable 
 {
 	private boolean flag;
 	private boolean [] winArray;
 	SharedData sd;
-	int[] array;
+	ArrayList <Integer> array;
 	int b;
 	
 	public ThreadCheckArray(SharedData sd) 
@@ -14,7 +15,7 @@ public class ThreadCheckArray implements Runnable
 			array = sd.getArray();
 			b = sd.getB();
 		}		
-		winArray = new boolean[array.length];
+		winArray = new boolean[array.size()];
 	}
 	
 	void rec(int n, int b)
@@ -26,7 +27,7 @@ public class ThreadCheckArray implements Runnable
 		}	
 		if (n == 1)
 		{
-			if(b == 0 || b == array[n-1])
+			if(b == 0 || b == array.get(n-1))
 			{
 				flag = true;
 				synchronized (sd) 
