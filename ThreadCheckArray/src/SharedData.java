@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 public class SharedData 
 {
 	private int [] array;
