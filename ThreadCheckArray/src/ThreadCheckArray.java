@@ -70,7 +70,7 @@ public class ThreadCheckArray implements Runnable
 		if (flag)
 		{
 			if (Thread.currentThread().getName().equals("thread1"))
-				winArray[array.length - 1] = true;
+				winArray[array.size() - 1] = true;
 			synchronized (sd) 
 			{
 				sd.setWinArray(winArray);
