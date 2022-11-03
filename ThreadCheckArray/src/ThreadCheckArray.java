@@ -1,10 +1,11 @@
 import java.util.ArrayList;
+
 public class ThreadCheckArray implements Runnable 
 {
 	private boolean flag;
 	private boolean [] winArray;
 	SharedData sd;
-	ArrayList <Integer> array;
+	ArrayList<Integer> array;
 	int b;
 	
 	public ThreadCheckArray(SharedData sd) 
@@ -73,6 +74,7 @@ public class ThreadCheckArray implements Runnable
 				winArray[array.size() - 1] = true;
 			synchronized (sd) 
 			{
+				System.out.println("The winner thread is: " + Thread.currentThread().getName());
 				sd.setWinArray(winArray);
 			}	
 		}
